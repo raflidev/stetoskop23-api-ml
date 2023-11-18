@@ -70,11 +70,11 @@ def predict(audio):
   hasil = np.argmax(output_data)
 
   spf = wave.open(dt_audio, 'r')
+#   print(spf.getsampwidth() * 8)
   signal = spf.readframes(-1)
   signal = np.fromstring(signal, dtype='int16')
   fs = spf.getframerate()
   Time = np.linspace(0, len(signal) / fs, num=len(signal))
-
   path_dir = {}
   path_dir['z'] = f' {hasil}'
   path_dir['y'] = f' {signal}'
