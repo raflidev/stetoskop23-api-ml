@@ -11,7 +11,7 @@ def home():
 def cek():
   if request.method == 'POST':
     f = request.files['file']
-    f.save(secure_filename(f.filename))
+    # f.save(secure_filename(f.filename))
     return model.predict(f.filename)
 
 if __name__ == "__name__":
