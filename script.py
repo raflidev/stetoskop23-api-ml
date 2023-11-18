@@ -6,7 +6,7 @@ import json
 import wave
 import os
 import tensorflow as tf
-from sklearn.preprocessing import StandardScaler
+# from sklearn.preprocessing import StandardScaler
 import pandas as pd
 import csv
 import sys
@@ -45,7 +45,6 @@ def predict(audio):
   mfccs = extract_mfcc(dt_audio)
   data = pd.read_csv('data.csv')
   data = data.drop(['filename'], axis=1)
-  scaler = StandardScaler()
   X = np.array(data.iloc[:, :-1], dtype=float)
   X = np.reshape(X, (X.shape[0], 40, 1, 1))
 
